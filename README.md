@@ -6,9 +6,5 @@ POC do vídeo sobre PHP8 Attributes, refatorando setters para atributos customiz
 
 ### Criar o autoloader
 ```bash
-$ composer dumpautoload
+$ composer du
 ```
-
-### Resolução
-1. Em **main** está o código inicial do projeto, sem implementação
-2. No branch **feature** coloquei o código realizado do vídeo
