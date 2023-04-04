@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Factories\Exceptions;
+namespace App\Validation\Exceptions;
 
 class PropertyException extends \Exception
 {

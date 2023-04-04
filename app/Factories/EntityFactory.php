@@ -2,7 +2,8 @@
 
 namespace App\Factories;
 
-use App\Factories\Exceptions\PropertyException;
+use App\Validation\Exceptions\AttributeException;
+use App\Validation\Exceptions\PropertyException;
 
 class EntityFactory
 {
@@ -25,7 +26,7 @@ class EntityFactory
 
             foreach ($reflactionProperty->getAttributes() as $attribute) {
                 if ([] === $attribute->getArguments()) {
-                    throw new PropertyException("The property {$property} does not have a validation value");
+                    throw new AttributeException("The attribute {$attribute->getName()} does not have a validation value");
                 }
 
                 $validatedValue = $attribute->newInstance()->validate($property, $value);

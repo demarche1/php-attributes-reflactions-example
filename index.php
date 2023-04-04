@@ -20,7 +20,7 @@ require __DIR__.'/vendor/autoload.php';
 $entityFactory = new EntityFactory('Payment');
 
 $payment = $entityFactory->create((object) [
-    'installments' => 13, // <-- Will throw an AttributeException
+    'installments' => 12, // <-- Will throw an AttributeException
     'amount' => 123.22,
 ]);
 
