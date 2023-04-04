@@ -24,6 +24,10 @@ class EntityFactory
             $reflactionProperty = $reflactionClass->getProperty($property);
 
             foreach ($reflactionProperty->getAttributes() as $attribute) {
+                if ([] === $attribute->getArguments()) {
+                    throw new PropertyException("The property {$property} does not have a validation value");
+                }
+
                 $validatedValue = $attribute->newInstance()->validate($property, $value);
                 $reflactionProperty->setAccessible(true);
                 $reflactionProperty->setValue($instanceClass, $validatedValue);
